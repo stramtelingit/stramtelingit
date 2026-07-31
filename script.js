@@ -6,6 +6,7 @@ setTimeout(addCps, 1000);
 
 // The callback function
 function addCps() {
-    var candieText = getElementById("candieText");
-    candieText = "you have " + (candies + cps) + " candies";
+    candies += cps;
+    var candieText = document.getElementById("candieText");
+    candieText.textContent = "you have " + Math.round(candies) + " candies";
 }
