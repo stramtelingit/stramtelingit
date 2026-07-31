@@ -8,5 +8,5 @@ setInterval(addCps, 1000);
 function addCps() {
     candies += cps;
     var candieText = document.getElementById("candieText");
-    candieText.textContent = "you have " + candies + " candies";
+    candieText.textContent = "you have " + Math.round(candies) + " candies";
 }
