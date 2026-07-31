@@ -10,7 +10,7 @@ function addCps() {
     var candieText = document.getElementById("candieText");
     candieText.textContent = "you have " + Math.round(candies) + " candies";
     for (var i = 0; i < upgrades.length; i++) {
-        if (candies >= upgrades[i].cost / 2) {
+        if (candies >= (upgrades[i].cost / 2)) {
             var upg = document.createElement("button");
             upg.textContent = "Buy " + upgrades[i].name + " for " + upgrades[i].cost + " candies";
             upg.onclick = function() {
