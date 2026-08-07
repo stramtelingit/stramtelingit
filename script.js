@@ -126,7 +126,7 @@ var generalUpgrades = [
 
 var specializedUpgrades = [
     new specializedUpgrade("doom", 4, false, window.doom),
-    new specializedUpgrade("doomRES", 4, false, (upg) => window.doom2(upg, "ihasd"))
+    new specializedUpgrade("doomRE6", 4, false, (upg) => window.doom2(upg, "ihasd"))
 ];
 
 var asdUpgrades = [
