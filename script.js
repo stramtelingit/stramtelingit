@@ -120,7 +120,7 @@ var generalUpgrades = [
 
 var specializedUpgrades = [
     new specializedUpgrade("doom", 4, false, window.doom),
-    new specializedUpgrade("doomREALS", 4, false, (upg) => window.doom2(upg, document.getElementById("ihasd")))
+    new specializedUpgrade("doomREA", 4, false, (upg) => window.doom2(upg, "ihasd"))
 ];
 
 var asdUpgrades = [
