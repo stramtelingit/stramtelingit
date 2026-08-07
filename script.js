@@ -119,7 +119,7 @@ var generalUpgrades = [
 ];
 
 var specializedUpgrades = [
-    new specializedUpgrade("doom", 100, false, window.doom)
+    new specializedUpgrade("doom", 4, false, window.doom)
 ];
 
 var asdUpgrades = [
