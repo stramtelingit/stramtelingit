@@ -7,6 +7,6 @@ window.doom = function (upg) {
 
 window.doom2 = function (upg, text) {
     console.log("Special upgrade used:", upg.name);
-    para = text;
+    para = document.getElementById(text);
     para.textContent = "You have unlocked the doom upgrade!";
 };
