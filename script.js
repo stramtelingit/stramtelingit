@@ -27,6 +27,23 @@ function addCps() {
             }
         }
     }
+
+    for (let i = 0; i < specializedUpgrades.length; i++) {
+        if (candies >= (specializedUpgrades[i].cost / 2)) {
+            if (specializedUpgrades[i].unlocked == false){
+                var upg = document.createElement("button");
+                const currentUpgrade = specializedUpgrades[i];
+                upg.textContent = "Buy " + specializedUpgrades[i].name + " for " + (specializedUpgrades[i].cost + 1) + " candies";
+                upg.onclick = function() {
+                    buyUpg(currentUpgrade);
+                };
+                upg.id = specializedUpgrades[i].name;
+                specializedUpgrades[i].unlocked = true;
+                var upsec = document.getElementById("upsec");
+                upsec.appendChild(upg);
+            }
+        }
+    }
 }
 
 function playClickSound() {
@@ -77,16 +94,32 @@ class upgrade {
     }
 }
 
+class specializedUpgrade {
+    constructor(name, cost, unlocked, onBuy = null) {
+        this.name = name;
+        this.cost = cost;
+        this.unlocked = unlocked;
+        this.onBuy = onBuy;
+    }
+
+    buy() {
+        candies -= this.cost;
+        document.getElementById("candieText").textContent =
+            "you have " + Math.round(candies) + " candies";
+        if (this.onBuy) {
+            this.onBuy(this);
+        }
+    }
+}
+
 var generalUpgrades = [
     new upgrade("imaginary workers", 9, 0.5, false),
     new upgrade("cookies", 29, 1, false),
     new upgrade("hypercaffeinated soda", 49, 2, false)
 ];
 
-var Upgrades = [
-    new upgrade("imaginary workers", 10, 0.5, false),
-    new upgrade("cookies", 30, 1, false),
-    new upgrade("hypercaffeinated soda", 50, 2, false)
+var specializedUpgrades = [
+    new specializedUpgrade("doom", 100, false, window.doom)
 ];
 
 var asdUpgrades = [
