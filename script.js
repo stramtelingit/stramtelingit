@@ -62,7 +62,13 @@ document.addEventListener("click", function unlockAudio() {
 function buyUpg(upg) {
     playClickSound();
     if (candies >= upg.cost + 1) {
-
+        try {
+             // Code that causes an error (e.g., calling a function that does not exist)
+             upg.buy();
+        } catch (error) {
+              // Display the error in the console
+              alert("An error occurred while buying the upgrade: " + error.message);
+        }
         upg.buy();
         const button = document.getElementById(upg.name);
 
