@@ -24,45 +24,17 @@ function addCps() {
         chocolateText.textContent = "you have " + Math.round(chocolates) + " chocolates";
     }
 
-    for (let i = 0; i < generalUpgrades.length; i++) {
-        if (candies >= (generalUpgrades[i].cost / 2)) {
-            if (generalUpgrades[i].unlocked == false){
-                var upg = document.createElement("button");
-                const currentUpgrade = generalUpgrades[i];
-                upg.textContent = "Buy " + generalUpgrades[i].name + " for " + (generalUpgrades[i].cost + 1) + " candies";
-                upg.onclick = function() {
-                    buyUpg(currentUpgrade);
-                };
-                upg.id = generalUpgrades[i].name;
-                generalUpgrades[i].unlocked = true;
-                var upsec = document.getElementById("upsec");
-                upsec.appendChild(upg);
-            }
-        }
-    }
+    window.unlock_upgrades(generalUpgrades);
+    window.unlock_upgrades(specializedUpgrades);
 
-    for (let i = 0; i < specializedUpgrades.length; i++) {
-        if (candies >= (specializedUpgrades[i].cost / 2)) {
-            if (specializedUpgrades[i].unlocked == false){
-                var upg = document.createElement("button");
-                const currentUpgrade = specializedUpgrades[i];
-                upg.textContent = "Buy " + specializedUpgrades[i].name + " for " + (specializedUpgrades[i].cost + 1) + " candies";
-                upg.onclick = function() {
-                    buyUpg(currentUpgrade);
-                };
-                upg.id = specializedUpgrades[i].name;
-                specializedUpgrades[i].unlocked = true;
-                var upsec = document.getElementById("upsec");
-                upsec.appendChild(upg);
-            }
-        }
-    }
 }
 
 function playClickSound() {
     audio.currentTime = 0;
     audio.play().catch(err => console.error(err));
 }
+
+
 
 document.addEventListener("click", function unlockAudio() {
     audio.play().then(() => {
