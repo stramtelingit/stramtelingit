@@ -17,6 +17,13 @@ function addCps() {
     candies += cps;
     var candieText = document.getElementById("candieText");
     candieText.textContent = "you have " + Math.round(candies) + " candies";
+
+    if (window.farm_active) {
+        chocolates += window.chocolate_cps;
+        var chocolateText = document.getElementById("chocolate_count");
+        chocolateText.textContent = "you have " + Math.round(chocolates) + " chocolates";
+    }
+
     for (let i = 0; i < generalUpgrades.length; i++) {
         if (candies >= (generalUpgrades[i].cost / 2)) {
             if (generalUpgrades[i].unlocked == false){
