@@ -1,6 +1,12 @@
-let candies = 0;
+window.candies = 0;
+window.chocolates = 0;
 
 let cps = 0.3;
+window.chocolate_cps = 0;
+
+window.farm_active = false;
+window.mill_active = false;
+window.forge_active = false;
 
 const audio = new Audio("click.wav");
 
@@ -125,7 +131,7 @@ var generalUpgrades = [
 ];
 
 var specializedUpgrades = [
-    new specializedUpgrade("doom", 4, false, window.doom),
+    new specializedUpgrade("request a feature", 99, false, window.unlock_chocolate),
     new specializedUpgrade("doomRE6", 4, false, (upg) => window.doom2(upg, "ihasd"))
 ];
 

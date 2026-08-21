@@ -1,0 +1,10 @@
+.flex-container {
+  display: flex;
+  gap: 15px; /* Adds clean spacing between the boxes without breaking layouts */
+}
+
+.box {
+  flex: 1; /* Makes all boxes distribute and take up equal width */
+  padding: 20px;
+  background-color: lightblue;
+}
