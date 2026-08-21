@@ -1,7 +1,7 @@
 window.candies = 0;
 window.chocolates = 0;
 
-let cps = 0.3;
+let cps = 10;
 window.chocolate_cps = 0;
 
 window.farm_active = false;
