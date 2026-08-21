@@ -1,10 +1,91 @@
+:root {
+  color-scheme: dark;
+  --background: #111827;
+  --surface: #1f2937;
+  --surface-hover: #374151;
+  --border: #4b5563;
+  --text: #f9fafb;
+  --muted-text: #cbd5e1;
+  --accent: #f59e0b;
+  --accent-hover: #fbbf24;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 24px;
+  background: var(--background);
+  color: var(--text);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+header,
+main,
+#upsec,
+footer {
+  max-width: 900px;
+  margin: 0 auto 24px;
+}
+
+h1 {
+  color: var(--accent-hover);
+}
+
+p {
+  color: var(--muted-text);
+}
+
+button {
+  margin: 6px 6px 6px 0;
+  padding: 10px 14px;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  font: inherit;
+}
+
+button:hover,
+button:focus-visible {
+  background: var(--surface-hover);
+  border-color: var(--accent-hover);
+  outline: 2px solid var(--accent-hover);
+  outline-offset: 2px;
+}
+
 .flex-container {
   display: flex;
   gap: 15px; /* Adds clean spacing between the boxes without breaking layouts */
+  max-width: 900px;
+  margin: 0 auto 24px;
+  flex-wrap: wrap;
 }
 
 .box {
-  flex: 1; /* Makes all boxes distribute and take up equal width */
+  flex: 1 1 220px;
   padding: 20px;
-  border: 1px solid #000;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  box-shadow: 0 8px 20px rgb(0 0 0 / 20%);
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 16px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
 }
