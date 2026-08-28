@@ -19,7 +19,7 @@ window.unlock_chocolate = function (upg) {
     }
 };
 
-window.unlock_chocolate = function (upg) {
+window.unlock_mill = function (upg) {
     console.log("Special upgrade used:", upg.name);
     window.farm_active = true;
     window.chocolate_cps = 1;

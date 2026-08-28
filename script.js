@@ -109,7 +109,8 @@ var generalUpgrades = [
 
 var specializedUpgrades = [
     new specializedUpgrade("request a feature", 99, false, window.unlock_chocolate),
-    new specializedUpgrade("doomRE6", 4, false, (upg) => window.doom2(upg, "ihasd"))
+    new specializedUpgrade("doomRE6", 4, false, (upg) => window.doom2(upg, "ihasd")),
+    new specializedUpgrade("request a feature", 599, false, window.unlock_mill),
 ];
 
 var asdUpgrades = [
