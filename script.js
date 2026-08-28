@@ -17,7 +17,7 @@ function addCps() {
     let total_cps2 = cps;
 
     if (window.mill_active) {
-        total_cps2 *= 1.2;
+        total_cps2 *= 2;
     }
 
     candies += total_cps2;
@@ -27,7 +27,7 @@ function addCps() {
     if (window.farm_active) {
         var totalCps = chocolate_cps;
         if (window.mill_active){
-            totalCps *= 1.2;
+            totalCps *= 0.2;
         }
         chocolates += totalCps;
         var chocolateText = document.getElementById("chocolate_count");
@@ -114,9 +114,9 @@ class specializedUpgrade {
 }
 
 var generalUpgrades = [
-    new upgrade("imaginary workers", 9, 0.5, false),
-    new upgrade("cookies", 29, 1, false),
-    new upgrade("hypercaffeinated soda", 49, 2, false)
+    new upgrade("imaginary workers", 9, 1, false),
+    new upgrade("cookies", 29, 2, false),
+    new upgrade("hypercaffeinated soda", 49, 4, false)
 ];
 
 var specializedUpgrades = [
