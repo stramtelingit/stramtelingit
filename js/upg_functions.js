@@ -21,7 +21,7 @@ window.unlock_chocolate = function (upg) {
 
 window.unlock_mill = function (upg) {
     console.log("Special upgrade used:", upg.name);
-    window.farm_active = true;
+    window.mill_active = true;
     window.chocolate_cps = 1;
     const farm = document.getElementById("farm_nomill");
     const mill = document.getElementById("farm_mill");

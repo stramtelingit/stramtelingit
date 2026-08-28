@@ -14,12 +14,20 @@ setInterval(addCps, 1000);
 
 // The callback function
 function addCps() {
-    candies += cps;
+    var total_cps2 = cps;
+    if (mill_active){
+        totalCps * 1.2;
+        candies += totalCps2;
+    }
     var candieText = document.getElementById("candieText");
     candieText.textContent = "you have " + Math.round(candies) + " candies";
 
     if (window.farm_active) {
-        chocolates += window.chocolate_cps;
+        var totalCps = chocolate_cps;
+        if (mill_active){
+            totalCps * 0.2;
+        }
+        chocolates += window.totalCps;
         var chocolateText = document.getElementById("chocolate_count");
         chocolateText.textContent = "you have " + Math.round(chocolates) + " chocolates";
     }
