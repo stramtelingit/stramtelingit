@@ -32,6 +32,8 @@ function addCps() {
         }
         chocolates += totalCps;
         var chocolateText = document.getElementById("chocolate_count");
+        var chocolateProd = document.getElementById("chocolate_prod");
+        chocolateProd.textContent = "chocolates per second" + totalCps;
         chocolateText.textContent = "you have " + Math.round(chocolates) + " chocolates";
     }
 
