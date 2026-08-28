@@ -1,12 +1,12 @@
 window.candies = 0;
 window.chocolates = 0;
 
-let cps = 10;
+let cps = 0.4;
 window.chocolate_cps = 0;
 
 let progressed = false;
 
-window.cb_version = "12"
+window.cb_version = "12.1"
 
 window.farm_active = false;
 window.mill_active = false;
