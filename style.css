@@ -7,6 +7,7 @@ body {
 	h1 { color:white; }
 	h2 { color:white; }
 	h3 { color:white; }
+	label { color:white; }
 	.clicki-img:hover {
 		cursor : pointer;
 	}

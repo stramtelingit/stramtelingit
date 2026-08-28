@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Web Page Template</title>
+    <title>candiebank</title>
     <!-- Link to external CSS stylesheet -->
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -45,7 +45,7 @@
  ______|||_______       ___________       
  -------+--------      /_____/_____\      
  ‾‾‾‾‾‾|||‾‾‾‾‾‾‾     /\           /\      
-  |    |||     |     / /           \ \     
+  /    |||     \     / /           \ \     
   |    |||     |    / /             \ \    
   |            |   / /_______________\ \   
   |     m      |  / /       ____      \ \    
@@ -61,6 +61,15 @@
         <div class="box">
             <p id="chocolate_prod">chocolate production: 1</p>
             <p id="chocolate_count">chocolates: 0</p>
+            <select id="boost">
+              <option value="none">none</option>
+              <option value="bananas" hidden>bananas</option>
+              <option value="cherry">Cherry</option>
+            </select>
+            <div style="display: none;" id="mill_act_sec">
+                <input type="checkbox" id="mill_activate" value="no" onchange="window.mill_toggle()">
+                <label for="mill_activate">activate mill</label>
+            </div>
         </div>
     </section>
 
@@ -70,6 +79,8 @@
 
     <!-- Link to external JavaScript file -->
     <script src="js/upg_functions.js"></script>
+    <script src="js/spec_functions.js"></script>
+    <script src="js/event_function.js"></script>
     <script src="js/unlock.js"></script>
     <script src="script.js"></script>
 </body>

@@ -4,11 +4,15 @@ window.chocolates = 0;
 let cps = 10;
 window.chocolate_cps = 0;
 
+let progressed = false;
+
+window.cb_version = "12"
+
 window.farm_active = false;
 window.mill_active = false;
 window.forge_active = false;
 
-const audio = new Audio("click.wav");
+window.clickSound = new Audio("click.wav");
 
 setInterval(addCps, 1000);
 
@@ -42,19 +46,21 @@ function addCps() {
 }
 
 function playClickSound() {
-    audio.currentTime = 0;
-    audio.play().catch(err => console.error(err));
+    window.clickSound.currentTime = 0;
+    window.clickSound.play().catch(err => console.error(err));
 }
 
 
 
 document.addEventListener("click", function unlockAudio() {
-    audio.play().then(() => {
-        audio.pause();
-        audio.currentTime = 0;
+    window.clickSound.play().then(() => {
+        window.clickSound.pause();
+        window.clickSound.currentTime = 0;
         document.removeEventListener("click", unlockAudio);
     }).catch(err => console.error(err));
 }, { once: true });
+
+
 
 function buyUpg(upg) {
     playClickSound();
@@ -90,6 +96,7 @@ class upgrade {
     buy() {
         candies -= this.cost;
         cps += this.cps;
+        progressed = true;
         document.getElementById("candieText").textContent =
             "you have " + Math.round(candies) + " candies";
     }
@@ -105,6 +112,7 @@ class specializedUpgrade {
 
     buy() {
         candies -= this.cost;
+        progressed = true;
         document.getElementById("candieText").textContent =
             "you have " + Math.round(candies) + " candies";
         if (this.onBuy) {
@@ -112,6 +120,38 @@ class specializedUpgrade {
         }
     }
 }
+
+
+
+// asjhnfaslkfaslksjflaksjfa
+//asfohlfhasfhasiopfhasojhasoifas
+//okasnisnfasfinasoifasnfa
+//aoshfoasfhnaishnfaisofnasofin
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Find the element by its ID, class, or tag
+    document.title = "candybank V" + window.cb_version;
+    let vtext = document.getElementById("ihasd");
+    if (vtext) {
+        vtext.textContent = "V" + window.cb_version;
+    }
+});
+
+window.addEventListener('beforeunload', function (e) {
+    if (!progressed) {
+        return;
+    }
+    // Cancels the event to trigger the confirmation dialog
+    e.preventDefault();
+    
+    // Required by older versions of Chrome and some other modern browsers
+    e.returnValue = ''; 
+});
+
+
+
+
+
 
 var generalUpgrades = [
     new upgrade("imaginary workers", 9, 1, false),
