@@ -17,7 +17,10 @@ function addCps() {
     var total_cps2 = cps;
     if (mill_active){
         totalCps * 1.2;
-        candies += totalCps2;
+        candies += total_cps2;
+    }
+    else {
+        candies += total_cps2;
     }
     var candieText = document.getElementById("candieText");
     candieText.textContent = "you have " + Math.round(candies) + " candies";
@@ -27,7 +30,7 @@ function addCps() {
         if (mill_active){
             totalCps * 0.2;
         }
-        chocolates += window.totalCps;
+        chocolates += totalCps;
         var chocolateText = document.getElementById("chocolate_count");
         chocolateText.textContent = "you have " + Math.round(chocolates) + " chocolates";
     }
