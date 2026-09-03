@@ -1,12 +1,14 @@
 window.candies = 0;
 window.chocolates = 0;
 
-let cps = 0.4;
+let cps = 20;
 window.chocolate_cps = 0;
 
 let progressed = false;
 
-window.cb_version = "12.1"
+window.currentBoost = "none";
+
+window.cb_version = "12.2"
 
 window.farm_active = false;
 window.mill_active = false;
@@ -160,9 +162,8 @@ var generalUpgrades = [
 ];
 
 var specializedUpgrades = [
-    new specializedUpgrade("request a feature", 99, false, window.unlock_chocolate),
-    new specializedUpgrade("doomRE6", 4, false, (upg) => window.doom2(upg, "ihasd")),
-    new specializedUpgrade("request a feature", 599, false, window.unlock_mill),
+    new specializedUpgrade("a feature", 99, false, window.unlock_chocolate),
+    new specializedUpgrade("a feature", 599, false, window.unlock_mill)
 ];
 
 var asdUpgrades = [

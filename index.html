@@ -60,8 +60,10 @@
         </div>
         <div class="box">
             <p id="chocolate_prod">chocolate production: 1</p>
+            <p id="cps">cps: 0.4</p>
             <p id="chocolate_count">chocolates: 0</p>
-            <select id="boost">
+            <select id="boost" onchange="window.boost_select(this.value)">
+                            
               <option value="none">none</option>
               <option value="bananas" hidden>bananas</option>
               <option value="cherry">Cherry</option>
