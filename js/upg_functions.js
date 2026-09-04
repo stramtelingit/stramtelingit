@@ -40,3 +40,16 @@ window.unlock_mill = function (upg) {
         mill.style.display = "flex";
     }
 };
+
+window.unlock_figure = function (upg, figure_stage) {
+    console.log("Special upgrade used:", upg.name);
+    const nextStage = figure_stage + 1;
+    const currentFigure = document.getElementById(String(figure_stage));
+    const nextFigure = document.getElementById(String(nextStage));
+
+    if (currentFigure && nextFigure) {
+        currentFigure.style.display = "none";
+        nextFigure.style.display = "flex";
+        window.figure_stage = nextStage;
+    }
+}
