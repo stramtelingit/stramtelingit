@@ -1,7 +1,7 @@
 window.candies = 0;
 window.chocolates = 0;
 
-let cps = 20;
+let cps = 0.4;
 window.chocolate_cps = 0;
 
 let progressed = false;
@@ -9,7 +9,7 @@ let past_1000 = false;
 
 window.currentBoost = "none";
 
-window.cb_version = "V13 alpha"
+window.cb_version = "13 alpha 2"
 
 window.farm_active = false;
 window.mill_active = false;
@@ -18,6 +18,7 @@ window.forge_active = false;
 window.figure_stage = 0;
 
 window.clickSound = new Audio("click.wav");
+window.hi = new Audio("WAPP-Hi.wav");
 
 setInterval(addCps, 1000);
 
@@ -58,7 +59,28 @@ function addCps() {
     window.unlock_upgrades(generalUpgrades);
     window.unlock_upgrades(specializedUpgrades);
     if (past_1000) {
-        window.unlock_upgrades(figure);
+        if (window.figure_stage == 0) {
+            window.unlock_upgrades(figure1);
+        }
+        if (window.figure_stage == 1) {
+            window.unlock_upgrades(figure2);
+        }
+        if (window.figure_stage == 2) {
+            window.unlock_upgrades(figure3);
+        }
+        if (window.figure_stage == 3) {
+            window.unlock_upgrades(figure4);
+        }
+        if (window.figure_stage == 4) {
+            window.unlock_upgrades(figure5);
+        }
+        if (window.figure_stage == 5) {
+            window.unlock_upgrades(figure6);
+        }
+        if (window.figure_stage == 6) {
+            window.unlock_upgrades(figure7);
+        }
+
     }
 
 }
@@ -182,12 +204,24 @@ var specializedUpgrades = [
     new specializedUpgrade("a feature", 599, false, window.unlock_mill)
 ];
 
-var figure = [
+var figure1 = [
     new specializedUpgrade("look", 1, false, (upg) => window.unlock_figure(upg, window.figure_stage)),
+];
+var figure2 = [
     new specializedUpgrade("look closer", 2, false, (upg) => window.unlock_figure(upg, window.figure_stage)),
+];
+var figure3 = [
     new specializedUpgrade("what is that", 4, false, (upg) => window.unlock_figure(upg, window.figure_stage)),
+];
+var figure4 = [
     new specializedUpgrade("walk closer", 8, false, (upg) => window.unlock_figure(upg, window.figure_stage)),
+];
+var figure5 = [
     new specializedUpgrade("walk closer", 16, false, (upg) => window.unlock_figure(upg, window.figure_stage)),
+];
+var figure6 = [
     new specializedUpgrade("wave", 32, false, (upg) => window.unlock_figure(upg, window.figure_stage)),
+];
+var figure7 = [
     new specializedUpgrade("wave", 64, false, (upg) => window.unlock_figure(upg, window.figure_stage)),
 ];
