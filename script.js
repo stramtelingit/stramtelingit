@@ -8,7 +8,7 @@ let progressed = false;
 
 window.currentBoost = "none";
 
-window.cb_version = "12.2"
+window.cb_version = "12.3"
 
 window.farm_active = false;
 window.mill_active = false;
@@ -32,6 +32,12 @@ function addCps() {
 
     if (window.farm_active) {
         var totalCps = chocolate_cps;
+        if (window.currentBoost == "cherry") {
+            totalCps *= 2;
+            if (Math.random() < 0.1) {
+                window.chocolates = window.chocolates / 3;
+            }
+        }
         if (window.mill_active){
             totalCps *= 0.2;
         }
