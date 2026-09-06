@@ -19,10 +19,8 @@ window.unlock_upgrades = function(general_upgrades) {
 }
 
 
-window.unlock_upgrades_spec = function(general_upgrades) {
+window.unlock_upgrades_kevin = function(general_upgrades) {
     var generalUpgrades = general_upgrades;
-    var candies = window.candies;
-    var upsec = document.getElementById("upsec");
     for (let i = 0; i < generalUpgrades.length; i++) {
         if (candies >= (generalUpgrades[i].cost / 2)) {
             if (generalUpgrades[i].unlocked == false){
@@ -34,7 +32,7 @@ window.unlock_upgrades_spec = function(general_upgrades) {
                 };
                 upg.id = generalUpgrades[i].name;
                 generalUpgrades[i].unlocked = true;
-                var upsec = document.getElementById("upsec");
+                var upsec = document.getElementById("kevin");
                 upsec.appendChild(upg);
             }
         }

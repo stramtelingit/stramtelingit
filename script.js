@@ -9,7 +9,7 @@ let past_1000 = false;
 
 window.currentBoost = "none";
 
-window.cb_version = "13 alpha 2"
+window.cb_version = "13 alpha 3"
 
 window.farm_active = false;
 window.mill_active = false;
@@ -80,6 +80,9 @@ function addCps() {
         if (window.figure_stage == 6) {
             window.unlock_upgrades(figure7);
         }
+        if (window.figure_stage == 7) {
+            window.unlock_upgrades_kevin(kevinUpgrades);
+        }
 
     }
 
@@ -124,6 +127,28 @@ function buyUpg(upg) {
     }
 }
 
+function buyUpgChoc(upg) {
+    playClickSound();
+    if (chocolates >= upg.cost + 1) {
+        try {
+             upg.buy();
+        } catch (error) {
+              alert("An error occurred while buying the upgrade: " + error.message);
+              return;
+        }
+        const button = document.getElementById(upg.name);
+
+        
+
+
+        if (button) button.remove();
+
+        console.log("bought!");
+    } else {
+        alert("Not enough chocolates to buy " + upg.name);
+    }
+}
+
 
 class upgrade {
     constructor(name, cost, cps, unlocked) {
@@ -160,6 +185,26 @@ class specializedUpgrade {
         }
     }
 }
+
+class specializedUpgradeChocolate {
+    constructor(name, cost, unlocked, onBuy = null) {
+        this.name = name;
+        this.cost = cost;
+        this.unlocked = unlocked;
+        this.onBuy = onBuy;
+    }
+
+    buy() {
+        chocolates -= this.cost;
+        progressed = true;
+        document.getElementById("chocolate_count").textContent =
+            "chocolates: " + Math.round(chocolates);
+        if (this.onBuy) {
+            this.onBuy(this);
+        }
+    }
+}
+
 
 
 
@@ -203,6 +248,17 @@ var specializedUpgrades = [
     new specializedUpgrade("a feature", 99, false, window.unlock_chocolate),
     new specializedUpgrade("a feature", 599, false, window.unlock_mill)
 ];
+
+var kevinUpgrades = [
+    new specializedUpgrade("banana flavoured candy", 849, false, (upg) => window.unlock_figure(upg, window.figure_stage)),
+    new specializedUpgrade("cherry flavoured candy", 1399, false, (upg) => window.unlock_figure(upg, window.figure_stage)),
+    
+]
+
+var kevinUpgradesChocolate = [
+    new specializedUpgradeChocolate("chocolate men", 1499, false, (upg) => window.unlock_figure(upg, window.figure_stage)),
+    new specializedUpgradeChocolate("the mines", 2599, false, (upg) => window.unlock_figure(upg, window.figure_stage)),
+]
 
 var figure1 = [
     new specializedUpgrade("look", 1, false, (upg) => window.unlock_figure(upg, window.figure_stage)),
