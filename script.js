@@ -1,7 +1,7 @@
 window.candies = 0;
 window.chocolates = 0;
 
-let cps = 0.4;
+let cps = 100;
 window.chocolate_cps = 0;
 
 let progressed = false;
@@ -9,7 +9,7 @@ let past_1000 = false;
 
 window.currentBoost = "none";
 
-window.cb_version = "13 alpha 3"
+window.cb_version = "13 alpha 4"
 
 window.farm_active = false;
 window.mill_active = false;
@@ -45,6 +45,9 @@ function addCps() {
             if (Math.random() < 0.1) {
                 window.chocolates *= 0.8;
             }
+        }
+        else if (window.currentBoost == "bananas") {
+            totalCps *= 2.2;
         }
         if (window.mill_active){
             totalCps *= 0.2;
@@ -250,8 +253,8 @@ var specializedUpgrades = [
 ];
 
 var kevinUpgrades = [
-    new specializedUpgrade("banana flavoured candy", 849, false, (upg) => window.unlock_figure(upg, window.figure_stage)),
-    new specializedUpgrade("cherry flavoured candy", 1399, false, (upg) => window.unlock_figure(upg, window.figure_stage)),
+    new specializedUpgrade("banana flavoured candy", 849, false, (upg) => window.buy_fertilizer(upg, "bananas")),
+    new specializedUpgrade("cherry flavoured candy", 1399, false, (upg) => window.buy_fertilizer(upg, "cherry")),
     
 ]
 

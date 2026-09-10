@@ -41,6 +41,23 @@ window.unlock_mill = function (upg) {
     }
 };
 
+window.buy_fertilizer = function (upg, name) {
+    console.log("Special upgrade used:", upg.name);
+    const boostOption = document.getElementById(name);
+    const boostSelect = document.getElementById("boost");
+    const boostLabel = document.getElementById("boostlabel");
+    if (boostSelect) {
+        boostSelect.hidden = false;
+    }
+    if (boostLabel) {
+        boostLabel.hidden = false;
+    }
+    if (boostOption) {
+        boostOption.hidden = false;
+    }
+
+}
+
 window.unlock_figure = function (upg, figure_stage) {
     console.log("Special upgrade used:", upg.name);
     const nextStage = figure_stage + 1;

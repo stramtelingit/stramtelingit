@@ -62,12 +62,13 @@
             <p id="chocolate_prod">chocolate production: 1</p>
             <p id="cps">cps: 0.4</p>
             <p id="chocolate_count">chocolates: 0</p>
-            <select id="boost" onchange="window.boost_select(this.value)">
+            <select id="boost" onchange="window.boost_select(this.value)" hidden>
                             
               <option value="none">none</option>
-              <option value="bananas" hidden>bananas</option>
-              <option value="cherry">cherry</option>
+              <option value="bananas" id="bananas" hidden>banana flavoured candy</option>
+              <option value="cherry" id="cherry" hidden>cherry flavoured candy</option>
             </select>
+            <label for="boost" hidden id="boostlabel">fertilizer</label>
             <div style="display: none;" id="mill_act_sec">
                 <input type="checkbox" id="mill_activate" value="no" onchange="window.mill_toggle()">
                 <label for="mill_activate">activate mill</label>
