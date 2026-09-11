@@ -11,7 +11,7 @@ let past_1000 = false;
 
 window.currentBoost = "none";
 
-window.cb_version = "13 alpha 5 hotfix 4 HOHOHO";
+window.cb_version = "13 alpha 6";
 
 window.farm_active = false;
 window.mill_active = false;
@@ -265,8 +265,13 @@ var kevinUpgrades = [
 ]
 
 var kevinUpgradesChocolate = [
-    new specializedUpgradeChocolate("chocolate men", 1499, false, (upg) => window.unlock_chocolate_men(upg)),
-    new specializedUpgradeChocolate("the mines", 2599, false, (upg) => window.unlock_figure(upg, window.figure_stage)),
+    new specializedUpgradeChocolate("chocolate men", 29, false, (upg) => window.unlock_chocolate_men(upg)),
+    new specializedUpgradeChocolate("the mines", 99, false, (upg) => window.unlock_figure(upg, window.figure_stage)),
+]
+
+var choc_men = [
+    new specializedUpgradeChocolate("chocolate men", 29, false, (upg) => window.unlock_chocolate_men(upg)),
+    new specializedUpgradeChocolate("the mines", 99, false, (upg) => window.unlock_figure(upg, window.figure_stage)),
 ]
 
 var figure1 = [
