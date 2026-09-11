@@ -1,6 +1,8 @@
 window.candies = 0;
 window.chocolates = 0;
 
+window.chocolate_men = 0;
+
 let cps = 100;
 window.chocolate_cps = 0;
 
@@ -9,11 +11,14 @@ let past_1000 = false;
 
 window.currentBoost = "none";
 
-window.cb_version = "13 alpha 4"
+window.cb_version = "13 alpha 5"
 
 window.farm_active = false;
 window.mill_active = false;
 window.forge_active = false;
+
+window.mine_found = false;
+window.forest_found = false;
 
 window.figure_stage = 0;
 
@@ -85,6 +90,7 @@ function addCps() {
         }
         if (window.figure_stage == 7) {
             window.unlock_upgrades_kevin(kevinUpgrades);
+            window.unlock_upgrades_kevin(kevinUpgradesChocolate);
         }
 
     }
@@ -110,7 +116,7 @@ document.addEventListener("click", function unlockAudio() {
 
 function buyUpg(upg) {
     playClickSound();
-    if (candies >= upg.cost + 1) {
+    if (candies >= upg.cost) {
         try {
              upg.buy();
         } catch (error) {
@@ -132,7 +138,7 @@ function buyUpg(upg) {
 
 function buyUpgChoc(upg) {
     playClickSound();
-    if (chocolates >= upg.cost + 1) {
+    if (chocolates >= upg.cost) {
         try {
              upg.buy();
         } catch (error) {
@@ -259,7 +265,7 @@ var kevinUpgrades = [
 ]
 
 var kevinUpgradesChocolate = [
-    new specializedUpgradeChocolate("chocolate men", 1499, false, (upg) => window.unlock_figure(upg, window.figure_stage)),
+    new specializedUpgradeChocolate("chocolate men", 1499, false, (upg) => window.unlock_chocolate_men(upg)),
     new specializedUpgradeChocolate("the mines", 2599, false, (upg) => window.unlock_figure(upg, window.figure_stage)),
 ]
 

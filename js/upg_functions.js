@@ -75,3 +75,14 @@ window.unlock_figure = function (upg, figure_stage) {
 
     
 }
+
+window.unlock_chocolate_men = function (upg) {
+    console.log("Special upgrade used:", upg.name);
+    const chocolateMen = document.getElementById("chocolate_men");
+    if (chocolateMen) {
+        chocolateMen.style.hidden = false;
+        window.chocolate_men = 1;
+    }
+
+    
+}
