@@ -11,7 +11,7 @@ let past_1000 = false;
 
 window.currentBoost = "none";
 
-window.cb_version = "13 alpha 5 hotfix 2"
+window.cb_version = "13 alpha 5 hotfix 4 HOHOHO";
 
 window.farm_active = false;
 window.mill_active = false;
@@ -90,7 +90,7 @@ function addCps() {
         }
         if (window.figure_stage == 7) {
             window.unlock_upgrades_kevin(kevinUpgrades);
-            window.unlock_upgrades_kevin(kevinUpgradesChocolate);
+            window.unlock_upgrades_kevin_chocolates(kevinUpgradesChocolate);
         }
 
     }

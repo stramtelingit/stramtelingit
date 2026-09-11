@@ -42,7 +42,7 @@ window.unlock_upgrades_kevin = function(general_upgrades) {
 window.unlock_upgrades_kevin_chocolates = function(general_upgrades) {
     var generalUpgrades = general_upgrades;
     for (let i = 0; i < generalUpgrades.length; i++) {
-        if (chocolates >= (generalUpgrades[i].cost / 2)) {
+        if (window.chocolates >= (generalUpgrades[i].cost / 2)) {
             if (generalUpgrades[i].unlocked == false){
                 var upg = document.createElement("button");
                 const currentUpgrade = generalUpgrades[i];
