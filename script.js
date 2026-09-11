@@ -11,7 +11,7 @@ let past_1000 = false;
 
 window.currentBoost = "none";
 
-window.cb_version = "13 alpha 5 hotfix 1"
+window.cb_version = "13 alpha 5 hotfix 2"
 
 window.farm_active = false;
 window.mill_active = false;

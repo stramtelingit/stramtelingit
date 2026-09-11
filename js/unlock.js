@@ -48,7 +48,7 @@ window.unlock_upgrades_kevin_chocolates = function(general_upgrades) {
                 const currentUpgrade = generalUpgrades[i];
                 upg.textContent = "Buy " + generalUpgrades[i].name + " for " + (generalUpgrades[i].cost + 1) + " chocolates";
                 upg.onclick = function() {
-                    buyUpg(currentUpgrade);
+                    buyUpgChoc(currentUpgrade);
                 };
                 upg.id = generalUpgrades[i].name;
                 generalUpgrades[i].unlocked = true;
