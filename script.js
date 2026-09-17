@@ -3,7 +3,7 @@ window.chocolates = 0;
 
 window.chocolate_men = 0;
 
-let cps = 100;
+let cps = 0.5;
 window.chocolate_cps = 0;
 
 let progressed = false;
@@ -11,7 +11,7 @@ let past_1000 = false;
 
 window.currentBoost = "none";
 
-window.cb_version = "13 alpha 6";
+window.cb_version = "1.0.0 gamma";
 
 window.farm_active = false;
 window.mill_active = false;
@@ -242,6 +242,29 @@ window.addEventListener('beforeunload', function (e) {
     e.returnValue = ''; 
 });
 
+
+
+
+window.win = function() {
+    alert("you have won the game! you have unlocked all upgrades and found all secrets. congratulations!");
+    const winSec= document.getElementById("end");
+    const farm= document.getElementById("farm");
+    if (winSec) {
+        winSec.hidden = false;
+    }
+    if (farm) {
+        farm.hidden = true;
+    }
+}
+
+window.buyWIN = function() {
+    if (candies >= 49999) {
+        candies -= 49999;
+        window.win();
+    } else {
+        alert("Not enough candies to buy the win condition.");
+    }
+}
 
 
 
