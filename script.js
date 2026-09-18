@@ -1,3 +1,6 @@
+window.debug = false;
+
+
 window.candies = 0;
 window.chocolates = 0;
 
@@ -11,7 +14,7 @@ let past_1000 = false;
 
 window.currentBoost = "none";
 
-window.cb_version = "1.0.0 gamma";
+window.cb_version = "1.0.0 gamma 2";
 
 window.farm_active = false;
 window.mill_active = false;
@@ -264,6 +267,18 @@ window.buyWIN = function() {
     } else {
         alert("Not enough candies to buy the win condition.");
     }
+}
+
+window.toggleDebug() = function() {
+    window.debug = !window.debug;
+    if (window.debug) {
+        alert("debug mode enabled. this is used by devs to test out new features without waiting hours and is not meant for normal gameplay");
+        window.cps = 300000;
+        window.chocolate_cps = 300000;
+    } else {
+        alert("debug mode disabled.");
+    }
+    
 }
 
 
