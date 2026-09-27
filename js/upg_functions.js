@@ -80,7 +80,7 @@ window.unlock_chocolate_men = function (upg) {
     console.log("Special upgrade used:", upg.name);
     const chocolateMen = document.getElementById("chocolate_men");
     if (chocolateMen) {
-        chocolateMen.style.hidden = false;
+        chocolateMen.hidden = false;
         window.chocolate_men = 1;
     }
 
