@@ -1,28 +1,40 @@
 
 
 window.buy_men = function (upg) {
-    console.log("Special upgrade used:", upg.name);
-    const chocolateMen = document.getElementById("men");
-    if (chocolateMen) {
-        window.chocolate_men += 1;
-        chocolateMen.textContent = window.chocolate_men;
+    try {
+        console.log("Special upgrade used:", upg && upg.name);
+        const chocolateMen = document.getElementById("men");
+        if (chocolateMen) {
+            window.chocolate_men += 1;
+            chocolateMen.textContent = window.chocolate_men + " men";
+        }
+    } catch (error) {
+        window.captureError(error, "buy_men");
     }
 }
 
 window.buy_miner = function (upg) {
-    console.log("Special upgrade used:", upg.name);
-    const chocolateMen = document.getElementById("miners");
-    if (chocolateMen) {
-        window.chocolate_miner += 1;
-        chocolateMen.textContent = window.chocolate_miner;
+    try {
+        console.log("Special upgrade used:", upg && upg.name);
+        const chocolateMiners = document.getElementById("miners");
+        if (chocolateMiners) {
+            window.chocolate_miners += 1;
+            chocolateMiners.textContent = window.chocolate_miners + " miners";
+        }
+    } catch (error) {
+        window.captureError(error, "buy_miner");
     }
 }
 
 window.buy_lumberjack = function (upg) {
-    console.log("Special upgrade used:", upg.name);
-    const chocolateMen = document.getElementById("lumberjack");
-    if (chocolateMen) {
-        window.chocolate_lumberjack += 1;
-        chocolateMen.textContent = window.chocolate_lumberjack;
+    try {
+        console.log("Special upgrade used:", upg && upg.name);
+        const chocolateLumberjack = document.getElementById("lumberjack");
+        if (chocolateLumberjack) {
+            window.chocolate_lumberjack += 1;
+            chocolateLumberjack.textContent = window.chocolate_lumberjack + " lumberjacks";
+        }
+    } catch (error) {
+        window.captureError(error, "buy_lumberjack");
     }
 }

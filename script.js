@@ -1,5 +1,25 @@
 window.debug = false;
 
+window.captureError = function(error, context = "Application") {
+    const captured = error instanceof Error ? error : new Error(String(error));
+    window.lastError = {
+        context,
+        message: captured.message,
+        stack: captured.stack,
+        time: new Date().toISOString()
+    };
+    console.error("[" + context + "]", captured);
+    window.dispatchEvent(new CustomEvent("app-error", { detail: window.lastError }));
+    return window.lastError;
+};
+
+window.addEventListener("error", function(event) {
+    window.captureError(event.error || event.message, "Uncaught browser error");
+});
+
+window.addEventListener("unhandledrejection", function(event) {
+    window.captureError(event.reason, "Unhandled promise rejection");
+});
 
 window.candies = 0;
 window.chocolates = 0;
