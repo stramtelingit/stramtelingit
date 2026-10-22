@@ -5,6 +5,8 @@ window.candies = 0;
 window.chocolates = 0;
 
 window.chocolate_men = 0;
+window.chocolate_miners = 0;
+window.chocolate_lumberjack = 0;
 
 let cps = 0.5;
 window.chocolate_cps = 0;
@@ -14,7 +16,7 @@ let past_1000 = false;
 
 window.currentBoost = "none";
 
-window.cb_version = "1.0.0 gamma 2 hotfix";
+window.cb_version = "1.0.0 gamma 3 chocolate men test";
 
 window.farm_active = false;
 window.mill_active = false;
