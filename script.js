@@ -36,7 +36,7 @@ let past_1000 = false;
 
 window.currentBoost = "none";
 
-window.cb_version = "1.0.0 gamma 4 chocolate men test dbg fix FIX fixing it so much rn. can ts work???????????? lets se how long this gets";
+window.cb_version = "1.0.0 gamma 4 chocolate men test dbg fix FIX fixing it so much rn. can ts work???????????? lets se how long this gets ti cki ticki na oru loosu";
 
 window.farm_active = false;
 window.mill_active = false;
@@ -55,6 +55,7 @@ setInterval(addCps, 1000);
 // The callback function
 function addCps() {
     let total_cps2 = cps;
+    const cpsText = document.getElementById("cps");
 
     if (window.mill_active) {
         total_cps2 *= 2;
@@ -69,7 +70,7 @@ function addCps() {
         for (let i = 0; i < window.choc_men; i++) {
             choc_men_mult += 0.1;
         }
-        window.chocolate_cps = window.chocolate_cps * (1 + choc_men_mult);
+        total_cps2 = total_cps2 * (1 + choc_men_mult);
     }
 
     if (window.mill_active && window.farm_active) {
