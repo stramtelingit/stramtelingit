@@ -60,6 +60,11 @@ function addCps() {
         total_cps2 *= 2;
     }
 
+    if (window.debug) {
+        total_cps2 *= 30;
+    }
+
+
     candies += total_cps2;
     if (candies >= 1000 && !past_1000) {
         alert("you have accumulated enough candies to attract new people to your domain");
@@ -74,9 +79,7 @@ function addCps() {
         window.chocolate_cps = window.chocolate_cps * (1 + choc_men_mult);
     }
 
-    if (window.debug) {
-        total_cps2 *= 30;
-    }
+    
 
 
     var candieText = document.getElementById("candieText");
