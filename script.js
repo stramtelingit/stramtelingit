@@ -36,7 +36,7 @@ let past_1000 = false;
 
 window.currentBoost = "none";
 
-window.cb_version = "1.0.0 gamma 4 chocolate men test dbg fix";
+window.cb_version = "1.0.0 gamma 4 chocolate men test dbg fix FIX";
 
 window.farm_active = false;
 window.mill_active = false;
