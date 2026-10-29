@@ -36,7 +36,7 @@ let past_1000 = false;
 
 window.currentBoost = "none";
 
-window.cb_version = "1.0.0 gamma 4 chocolate men test dbg fix FIX fixing it so much rn.";
+window.cb_version = "1.0.0 gamma 4 chocolate men test dbg fix FIX fixing it so much rn. can ts work????????????";
 
 window.farm_active = false;
 window.mill_active = false;
@@ -70,6 +70,13 @@ function addCps() {
             choc_men_mult += 0.1;
         }
         window.chocolate_cps = window.chocolate_cps * (1 + choc_men_mult);
+    }
+
+    if (window.mill_active) {
+        cpsText.textContent = "candies per second: " + (total_cps2 * 2);
+    }
+    else if (!window.mill_active) {
+        cpsText.textContent = "candies per second: " + total_cps2;
     }
 
     candies += total_cps2;
