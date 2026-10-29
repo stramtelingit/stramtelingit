@@ -36,7 +36,7 @@ let past_1000 = false;
 
 window.currentBoost = "none";
 
-window.cb_version = "1.0.0 gamma 3 chocolate men test";
+window.cb_version = "1.0.0 gamma 4 chocolate men test";
 
 window.farm_active = false;
 window.mill_active = false;
@@ -65,6 +65,15 @@ function addCps() {
         alert("you have accumulated enough candies to attract new people to your domain");
         past_1000 = true;
     }
+
+    if (window.choc_men > 0) {
+        let choc_men_mult = 0;
+        for (let i = 0; i < window.choc_men; i++) {
+            choc_men_mult += 0.1;
+        }
+        window.chocolate_cps = window.chocolate_cps * (1 + choc_men_mult);
+    }
+
     var candieText = document.getElementById("candieText");
     candieText.textContent = "you have " + Math.round(candies) + " candies";
 
