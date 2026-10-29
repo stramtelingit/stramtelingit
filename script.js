@@ -36,7 +36,7 @@ let past_1000 = false;
 
 window.currentBoost = "none";
 
-window.cb_version = "1.0.0 gamma 4 chocolate men test dbg fix FIX";
+window.cb_version = "1.0.0 gamma 4 chocolate men test dbg fix FIX fixing it so much rn.";
 
 window.farm_active = false;
 window.mill_active = false;
@@ -64,13 +64,6 @@ function addCps() {
         total_cps2 *= 30;
     }
 
-
-    candies += total_cps2;
-    if (candies >= 1000 && !past_1000) {
-        alert("you have accumulated enough candies to attract new people to your domain");
-        past_1000 = true;
-    }
-
     if (window.choc_men > 0) {
         let choc_men_mult = 0;
         for (let i = 0; i < window.choc_men; i++) {
@@ -78,6 +71,14 @@ function addCps() {
         }
         window.chocolate_cps = window.chocolate_cps * (1 + choc_men_mult);
     }
+
+    candies += total_cps2;
+    if (candies >= 1000 && !past_1000) {
+        alert("you have accumulated enough candies to attract new people to your domain");
+        past_1000 = true;
+    }
+
+    
 
     
 
